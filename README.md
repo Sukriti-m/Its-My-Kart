@@ -96,3 +96,118 @@ RESPONSE:
    "Customer data deleted"
 }
 ```
+## B. PRODUCT API 
+### 1. ADD PRODUCT
+METHOD: POST , REQUEST FORMAT: JSON , URL: /product/add 
+  
+FORMAT:  
+```
+{
+"name":"String",
+"about":"String",
+"category":"Array",
+"color":"String",
+"size":"String",
+"price":"Number"
+}
+
+```
+EXAMPLE:  
+```
+{
+"name":"turtle neck top",
+"about":"A floral turtle neck top made of crepe fabric.",
+"category":["women","crepe"],
+"color":"green",
+"size":"L",
+"price":"999"
+}  
+```
+RESPONSE:  
+```
+{
+    "name": "turtle neck top",
+    "about": "A floral turtle neck top made of crepe fabric.",
+    "category": [
+        "women",
+        "crepe"
+    ],
+    "size": "L",
+    "color": "green",
+    "price": 999,
+    "_id": "62d9408c3be23f93e6b20668",
+    "__v": 0
+}
+```
+### 2. EDIT PRODUCT
+METHOD: PUT , REQUEST FORMAT: JSON , URL: /product/id
+  
+FORMAT:  
+```
+{
+"name":"String",
+"about":"String",
+"category":"Array",
+"color":"String",
+"size":"String",
+"price":"Number"
+}
+
+```
+EXAMPLE:  
+```
+{
+"name":"turtle neck top",
+"about":"A floral turtle neck top made of crepe fabric.",
+"category":["women","crepe","top"],
+"color":"black",
+"size":"XL",
+"price":"999"
+}  
+```
+RESPONSE:  
+```
+{
+    "_id": "62d9408c3be23f93e6b20668",
+    "name": "turtle neck top",
+    "about": "A floral turtle neck top made of crepe fabric.",
+    "category": [
+        "women",
+        "crepe",
+        "top"
+    ],
+    "size": "XL",
+    "color": "black",
+    "price": 999,
+    "__v": 0
+}
+```
+### 3. VIEW PRODUCT
+METHOD: GET , URL: /product/id
+
+RESPONSE:  
+```
+{
+    "_id": "62d9408c3be23f93e6b20668",
+    "name": "turtle neck top",
+    "about": "A floral turtle neck top made of crepe fabric.",
+    "category": [
+        "women",
+        "crepe",
+        "top"
+    ],
+    "size": "XL",
+    "color": "black",
+    "price": 999,
+    "__v": 0
+}
+```
+### 4. DELETE PRODUCT
+METHOD: DELETE , URL: /product/id
+
+RESPONSE:  
+```
+{
+   "Product data deleted"
+}
+```
