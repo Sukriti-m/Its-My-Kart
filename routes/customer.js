@@ -48,7 +48,7 @@ router.delete("/:id",async(req,res)=>{try{
     const idCustomer=Customer.find({_id:req.params.id});
 if(!idCustomer)
 return res.status(200).json("Customer id not found.");
-const deleteCustomer= await Customer.findByIdAndDelete(req.params.id);
+await Customer.findByIdAndDelete(req.params.id);
 res.status(200).json("Customer data deleted");
 }
 catch(err)
