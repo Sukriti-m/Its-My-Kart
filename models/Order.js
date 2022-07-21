@@ -7,7 +7,7 @@ products:[{productId:{type: mongoose.Schema.Types.ObjectId,
     ref:"Product"},
 quantity:{type:Number,
     default:1}}],
-totalCost:{type:Number,required:true},
+totalCost:{type:Number,default:0},
 status:{type:String,default:"pending"}
 });
 
