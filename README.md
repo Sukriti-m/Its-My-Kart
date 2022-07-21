@@ -211,3 +211,113 @@ RESPONSE:
    "Product data deleted"
 }
 ```
+## C. ORDER API 
+### 1. ADD ORDER
+METHOD: POST , REQUEST FORMAT: JSON , URL: /order/add 
+  
+FORMAT:  
+```
+{
+"customerId":"String",
+"products":"Array",
+"status":"String"
+}
+
+```
+EXAMPLE:  
+```
+{
+"customerId":"62d8f266952381267704adb1",
+"products":[
+{"productId":"62d8ffb71e4890ee3029f9f8",
+"quantity":2}
+],
+"status":"pending"
+} 
+```
+RESPONSE:  
+```
+{
+    "customerId": "62d8f266952381267704adb1",
+    "products": [
+        {
+            "productId": "62d8ffb71e4890ee3029f9f8",
+            "quantity": 2,
+            "_id": "62d944423be23f93e6b20671"
+        }
+    ],
+    "totalCost": 0,
+    "status": "pending",
+    "_id": "62d944423be23f93e6b20670",
+    "__v": 0
+}
+```
+### 2. EDIT ORDER
+METHOD: PUT , REQUEST FORMAT: JSON , URL: /order/id
+  
+FORMAT:  
+```
+{
+"customerId":"String",
+"products":"Array",
+"status":"String"
+}
+
+```
+EXAMPLE:  
+```
+{
+"customerId":"62d8f266952381267704adb1",
+"products":[
+{"productId":"62d8ffb71e4890ee3029f9f8",
+"quantity":1}
+],
+"status":"completed"
+} 
+```
+RESPONSE:  
+```
+{
+    "_id": "62d94b49aeb7f21257b4fa23",
+    "customerId": "62d8f266952381267704adb1",
+    "products": [
+        {
+            "productId": "62d8ffb71e4890ee3029f9f8",
+            "quantity": 1,
+            "_id": "62d94bc8aeb7f21257b4fa2e"
+        }
+    ],
+    "totalCost": 499,
+    "status": "completed",
+    "__v": 0
+}
+```
+### 3. VIEW ORDER
+METHOD: GET , URL: /order/id
+
+RESPONSE:  
+```
+{
+    "_id": "62d94b49aeb7f21257b4fa23",
+    "customerId": "62d8f266952381267704adb1",
+    "products": [
+        {
+            "productId": "62d8ffb71e4890ee3029f9f8",
+            "quantity": 1,
+            "_id": "62d94bddaeb7f21257b4fa32"
+        }
+    ],
+    "totalCost": 499,
+    "status": "completed",
+    "__v": 0
+}
+```
+### 4. DELETE ORDER
+METHOD: DELETE , URL: /order/id
+
+RESPONSE:  
+```
+{
+   "Order data deleted"
+}
+```
