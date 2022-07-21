@@ -13,10 +13,10 @@ app.get("/",(req,res)=>{
 res.send("API working successfully.");
 });
 
-
-app.use("/",customerRoute);
-app.use("/",orderRoute);
-app.use("/",productRoute);
+app.use(express.json());
+app.use("/customer",customerRoute);
+app.use("/order",orderRoute);
+app.use("/product",productRoute);
 app.listen(process.env.PORT ||3000,(err)=>{if(!err) console.log("Server Started");
 else
 console.log(err);});

@@ -1,12 +1,12 @@
 const mongoose=require("mongoose");
 
 const customerSchema=new mongoose.Schema({
-userName:{type:string,required:true,unique:true},
-email:{type:string,required:true},
-password:{type:string,required:true,unique:true},
-phoneNumber:{type:number,required:true},
-address:{type:string,required:true }
+userName:{type:String,required:true,unique:true},
+email:{type:String ,required:true},
+password:{type:String,required:true,unique:true},
+phoneNumber:{type:Number,required:true},
+address:{type:String,required:true }
 
 })
 
-module.exports=mongoose.model("Customer",customerSchema);
+module.exports=new mongoose.model("Customer",customerSchema);

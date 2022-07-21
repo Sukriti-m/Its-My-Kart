@@ -1,14 +1,14 @@
 const mongoose=require("mongoose");
 
 const orderSchema=new mongoose.Schema({
-customerId:{type:Schema.Types.ObjectId,
+customerId:{type: mongoose.Schema.Types.ObjectId,
 ref:"Customer"},
-products:[{productId:{type:Schema.Types.ObjectId,
+products:[{productId:{type: mongoose.Schema.Types.ObjectId,
     ref:"Product"},
-quantity:{type:number,
+quantity:{type:Number,
     default:1}}],
-totalCost:{type:number,required:true},
-status:{type:string,default:"pending"}
+totalCost:{type:Number,required:true},
+status:{type:String,default:"pending"}
 });
 
 module.exports=mongoose.model("order",orderSchema);
