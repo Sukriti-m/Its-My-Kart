@@ -1,6 +1,6 @@
 # Its-My-Kart
-
-## 1. ADD CUSTOMER
+## A. CUSTOMER API 
+### 1. ADD CUSTOMER
 METHOD: POST , REQUEST FORMAT: JSON , URL: /customer/add 
   
 FORMAT:  
@@ -36,7 +36,7 @@ RESPONSE:
     "__v": 0
 }
 ```
-## 2. EDIT CUSTOMER
+### 2. EDIT CUSTOMER
 METHOD: PUT , REQUEST FORMAT: JSON , URL: /customer/id
   
 FORMAT:  
@@ -72,7 +72,7 @@ RESPONSE:
     "__v": 0
 }
 ```
-## 3. VIEW CUSTOMER
+### 3. VIEW CUSTOMER
 METHOD: GET , URL: /customer/id
 
 RESPONSE:  
@@ -87,7 +87,7 @@ RESPONSE:
     "__v": 0
 }
 ```
-## 4. DELETE CUSTOMER
+### 4. DELETE CUSTOMER
 METHOD: DELETE , URL: /customer/id
 
 RESPONSE:  
