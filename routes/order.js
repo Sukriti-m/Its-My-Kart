@@ -29,6 +29,7 @@ totalCost+=cost*saveOrder.products[i].quantity;
 await Order.findByIdAndUpdate(saveOrder._id, {
     $set:{totalCost:totalCost }
     });
+    totalCost=0;
 res.status(200).json(saveOrder);
 }
 catch(err)
